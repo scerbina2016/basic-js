@@ -16,7 +16,7 @@ const { NotImplementedError } = require('../extensions/index.js');
  */
 
 
-let matrix=[[0,1,'^^'],[0,'^^',1],['^^',0,1]];
+//let matrix=[[0,1,'^^'],[0,'^^',1],['^^',0,1]];
 function countCats(matrix) {
 
  
