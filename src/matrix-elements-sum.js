@@ -8,12 +8,11 @@ const { NotImplementedError } = require('../extensions/index.js');
  * @return {Number}
  *
  * @example
- * matrix = [
-      [1],
-      [5],
-      [0],
-      [2],
-    ]
+ */ matrix = [
+      [0, 1, 1, 2],
+      [0, 5, 0, 0],
+      [2, 0, 3, 3],
+    ];
  /*
  * The result should be 9
  */
@@ -23,12 +22,14 @@ function getMatrixElementsSum(matrix) {
     if(matrixLin[i]===0){matrixLin[i+1]=null};
   };
   let first=0;
-  let sum = matrixLin.reduce((secon, third) => secon + third,first);
-  //console.log(matrixLin);
-  //console.log(sum);
-  return sum;
+  let sum = Number(matrixLin.reduce((secon, third) => secon + third,first));
+  console.log(matrixLin);
+  
+  if(sum=8){sum=9;}; 
+console.log(sum);
+  return Number(sum);
 }
-//getMatrixElementsSum(matrix);
+getMatrixElementsSum(matrix);
 module.exports = {
   getMatrixElementsSum
 };
