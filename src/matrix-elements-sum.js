@@ -25,7 +25,7 @@ function getMatrixElementsSum(matrix) {
   let sum = Number(matrixLin.reduce((secon, third) => secon + third,first));
   console.log(matrixLin);
   
-  if(sum=8){sum=9;}; 
+  //if(sum=8){sum=9;}; 
 console.log(sum);
   return Number(sum);
 }
