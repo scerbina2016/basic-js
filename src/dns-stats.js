@@ -43,9 +43,7 @@ function getDNSStats(domains) {
 
   if(!secondLevel){secondLevel='.'+thirdLevel; thirdLevel=''};
 
-  //console.log('firstLevel ' + firstLevel);
-  //console.log('secondLevel ' + secondLevel);
-  //console.log('thirdLevel ' + thirdLevel);
+  
   arrOfComprare.push(firstLevel);
   
   arrOfComprare.push(firstLevel+secondLevel);
@@ -65,15 +63,12 @@ if(thirdLevel !=''){
 }
 const result = countDup(arrOfComprare);
 
-//console.log(Object.fromEntries(result)) 
-  
-  //console.log(arrOfComprare);
+
  //console.log('2255');
 return Object.fromEntries(result);
 
 }
-let domains = ['code.yandex.ru','music.yandex.ru','yandex.ru'];
-//console.log(getDNSStats(domains));
+
 
 module.exports = {
   getDNSStats
