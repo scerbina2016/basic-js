@@ -22,10 +22,58 @@ const { NotImplementedError } = require('../extensions/index.js');
  * }
  *
  */
-function getDNSStats(/* domains */) {
-  throw new NotImplementedError('Not implemented');
-  // remove line with error and write your code here
+function getDNSStats(domains) {
+  let workIner;
+  let asd;
+  let firstLevel;
+  let firstDot;
+  let lastDot;
+  let secondLevel;
+  let thirdLevel;
+  let arrOfComprare = [];
+
+  for(i=0; i<domains.length; i++){
+  workIner = domains[i];
+  
+  lastDot = workIner.lastIndexOf('.');
+  firstDot = workIner.indexOf('.');
+  firstLevel = workIner.slice(lastDot, workIner.length);
+  secondLevel = workIner.slice(firstDot, lastDot);
+  thirdLevel  = workIner.slice(0, firstDot);
+
+  if(!secondLevel){secondLevel='.'+thirdLevel; thirdLevel=''};
+
+  //console.log('firstLevel ' + firstLevel);
+  //console.log('secondLevel ' + secondLevel);
+  //console.log('thirdLevel ' + thirdLevel);
+  arrOfComprare.push(firstLevel);
+  
+  arrOfComprare.push(firstLevel+secondLevel);
+if(thirdLevel !=''){
+  arrOfComprare.push(firstLevel+secondLevel+'.'+thirdLevel);
 }
+
+  
+}
+ const countDup = dups => {
+  const map = new Map()
+
+  for (const dup of dups) {
+    map.set(dup, map.get(dup) + 1 || 1)
+  }
+  return map
+}
+const result = countDup(arrOfComprare);
+
+//console.log(Object.fromEntries(result)) 
+  
+  //console.log(arrOfComprare);
+ //console.log('2255');
+return Object.fromEntries(result);
+
+}
+let domains = ['code.yandex.ru','music.yandex.ru','yandex.ru'];
+//console.log(getDNSStats(domains));
 
 module.exports = {
   getDNSStats
