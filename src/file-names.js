@@ -34,8 +34,8 @@ function renameFiles(names ) {
   });
 }
 
-let names = ["file", "file", "image", "file(1)", "file"];
-console.log(renameFiles(names));
+//let names = ["file", "file", "image", "file(1)", "file"];
+//console.log(renameFiles(names));
 
 module.exports = {
   renameFiles
