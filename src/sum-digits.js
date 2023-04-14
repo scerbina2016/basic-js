@@ -13,29 +13,52 @@ const { NotImplementedError } = require('../extensions/index.js');
  *
  */
 
-let nn=88888888888888;
-;
-let prohod=1;
-function getSumOfDigits(n) {
-  let nStr=String(n);
-  //if(n<10){console.log('summa' +n);return n};
- // console.log(nStr);
- // console.log(nStr.length);
-  let sum=0;
-  
-  for(i=0;i<nStr.length;i++){
-    sum +=Number(nStr[i]);
-    
-  
-  }
-  let firSum=0;
-  if(String(sum).length==2){nStr=String(sum); sum=Number(sum[0])+Number(sum[1])+Number(sum[2])};
-  if(String(sum).length==1){nStr=String(sum); sum=Number(sum[0])+Number(sum[1])};
-  //if(sum>9){;n=sum;getSumOfDigits(n)} ;
 
-return sum;
+
+function getSumOfDigits(n) {
+  /*let sum = 0;
+  let numArr;
+
+  if(n < 9) {return n};
+  let nStr = String(n).split('');
+  numArr = nStr.map(char => Number(char));
+
+console.log(numArr);
+  
+ n = numArr.reduce((accumulator, currentValue) => accumulator + currentValue);
+ console.log('its n => '+n);
+ console.log('its sum =>' +sum);
+ if (n > 9){getSumOfDigits(n)} else{ console.log('its return =>'+n);sum = n; return sum;}
+  return sum;*/
+
+  
+    let sum = 0;
+    while (n > 0 || sum > 9) {
+         if(n == 0) {
+            n = sum;
+            sum = 0;
+         }
+         sum = sum + n % 10;
+         console.log('n%10 =>'+n%10);
+         console.log('sum =>'+sum);
+
+         n = Math.floor(n / 10);
+         console.log('n floor =>' + n);
+    }
+    return sum;
+
+
+
+
+
+
+
 }
-console.log(getSumOfDigits(nn));
+
+//let nn=88888888888888;
+//getSumOfDigits(n);
+//console.log(getSumOfDigits(nn));
+
 module.exports = {
   getSumOfDigits
 };
